@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cCalculator</title>
+    <link rel="stylesheet" href=".github/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+</head>
+<body>
+
+  <div id="wraper">
+
+
+        <div id="logobox">
+          <img id="logo" src=".github/logobraun.jpg" />    
+        </div >
+
+
+      <div id="braun">
+        <input type="text" id="screen" readonly>
+        
+        <div id="onoff">
+          <button id="redbutton"></button>
+          <button id="greenbutton"></button>
+        </div>
+      </div>
+      
+          
+        <div id="puntos">
+          <img id="whithepoint1" src=".github/circulo-blanco-fondo-de-forma-redonda-taza.jpg" />
+          <img id="whithepoint2" src=".github/circulo-blanco-fondo-de-forma-redonda-taza.jpg" />
+        </div>
+       
+        <div id="puntos2">
+            <img id="fillpoint" src=".github/circulo-blanco-fondo-de-forma-redonda-taza.jpg" />
+            <img id="emptypoint" src=".github/flat,750x1000,075,f.jpg" />
+        </div>
+
+     
+
+
+
+
+
+      <div id="wraperbuttons">
+
+        <! -- "stringbutton" no realizan ninguna acción, los añadí para imitar el diseño de la calculadora BRAUN ET66 -->
+
+
+        <div >
+            <button class="stringbutton">M+</button>
+            <button class="stringbutton">M-</button>
+            <button class="stringbutton">MR</button>
+            <button class="stringbutton">MC</button>
+            <button class="stringbutton">+/-</button>
+            
+          </div>
+
+
+
+        <div id="line2">
+          <button onclick="calculateSquareroot()"id="raiz" class="button">√</button>
+          <button onclick="stringNumber('7')" class="button">7</button>
+          <button onclick="stringNumber('8')" class="button">8</button>
+          <button onclick="stringNumber('9')" class="button">9</button>
+          <button onclick="stringOperation('division')" id="division" class="button">/</button>  
+        </div>
+        <div id="line3">
+          <button onclick="stringOperation('percent')"id="porcentaje"class="button">%</button>
+          <button onclick="stringNumber('4')" class="button">4</button>
+          <button onclick="stringNumber('5')"class="button">5</button>
+          <button onclick="stringNumber('6')"class="button">6</button>
+          <button onclick="stringOperation('multiplication')" id="multiplicacion"class="button">x</button> 
+        </div>
+        <div id="line4">
+          <button onclick="clearScreen('clearScreen')"id="totalclear"class="button">CE</button>
+          <button onclick="stringNumber('1')" class="button">1</button>
+          <button onclick="stringNumber('2')"class="button">2</button>
+          <button onclick="stringNumber('3')"class="button">3</button>
+          <button onclick="stringOperation('substraction')"id="resta"class="button">-</button> 
+        </div>
+        <div id="line5">
+            <button onclick="parcialclear('parcialclear')"id="clear"class="button">c</button>
+            <button onclick="stringNumber('0')"class="button">0</button>
+            <button onclick="stringNumber('.')"id="comma"class="button">.</button>
+            <button onclick="calculateResult()" id="result"class="button">=</button>
+            <button onclick="stringOperation('add')" id="add" class="button">+</button> 
+        </div>
+      </div>
+        
+       
+  </div>
+
+  <! -- Las operaciones que añadí además de las básica son el botón CE para borrar toda la pantalla, C para borrado del útimo dígito,
+  raíz cuadrada y  porcentaje -->
+
+
+
+<script>
+
+    const boton = document.querySelectorAll ("button");
+    let screen =document.getElementById("screen");
+    let valorActual = "";
+    let operator = null;
+    let opercionActual = null;
+       
+
+         function stringNumber(number){
+            valorActual += number;
+            screen.value = valorActual;
+           
+          }
+
+    
+
+
+         function stringOperation(op) {
+            if (valorActual === '' && opercionActual === null) return;
+            if (valorActual !== '') {
+                if (opercionActual === null) {
+                    opercionActual = parseFloat(valorActual);
+                } else {
+                    calculateResult();
+                    opercionActual = parseFloat(screen.value);
+                }
+            }
+            operator = op;
+            valorActual = '';
+           
+          }
+    
+        function getOperatorSymbol(op) {
+        switch (op) {
+            case 'add':
+                return '+';
+            case 'substraction':
+                return '-';
+            case 'multiplication':
+                return '*';
+            case 'division':
+                return '/';
+            case 'percent':
+                return '%';
+            default:
+                return '';
+              }
+         }
+
+
+
+         function clearScreen(){
+             valorActual = "";
+             operator = null;
+           opercionActual = null;
+            screen.value ="";
+         }
+         
+
+         
+         function parcialclear(){
+          valorActual = valorActual.slice(0,-1);
+          screen.value = valorActual;
+         }
+        
+
+
+
+         function calculateResult() {
+            if (valorActual === '' || operator === null || opercionActual === null) return;
+            let result;
+            let currentNumber = parseFloat(valorActual);
+            switch (operator) {
+                case 'add':
+                    result = opercionActual + currentNumber;
+                    break;
+                case 'substraction':
+                    result = opercionActual - currentNumber;
+                    break;
+                case 'multiplication':
+                    result = opercionActual * currentNumber;
+                    break;
+                case 'division':
+                    result = opercionActual / currentNumber;
+                    break;
+                case 'percent':
+                    result = (opercionActual * currentNumber)/100;
+                    break;
+                case '√':
+                  result = math.sqrt(operacionActual);
+                  break;
+              
+                default:
+                    return;
+            }
+            screen.value = result;
+            valorActual = result.toString();
+            operacionActual = null;
+            operator = null;
+        }
+
+  function calculateSquareroot() {
+    if (valorActual === '') return;
+    let number = parseFloat(valorActual);
+    let result = math.sqrt(number);
+    screen.value = result;
+    valorActual = result.toString();
+    operator = null;
+    operacionActual = null;
+  }
+    
+         
+         
+         
+
+</script>
+
+</body>
+</html>

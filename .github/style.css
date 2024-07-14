@@ -1,0 +1,242 @@
+#wraper{
+    width: 200px;
+    height: 320px;
+    background-color: rgb(62, 61, 61);
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 12%;
+    border-top-left-radius: 20px 8%;
+    border-top-right-radius: 8px 7%;
+    box-shadow: 5px 5px 10px #888888;
+    border-right: 10px solid #120303;
+    
+}
+
+#logobox{
+    width: 200px;
+    height: 3em;
+    background-color: rgb(62, 61, 61);
+    border-top-left-radius: 5px 8%;
+
+}
+
+#logo{
+    width: 40px;
+    height: 15px;
+    padding-top: 1.5em;
+    margin-left: 19px;
+   
+    
+}
+
+
+#braun{
+  align-items: center;
+  text-align: center;
+    }
+
+
+
+
+
+
+
+/*botones */
+
+
+
+#onoff{
+    margin-top: 8px;
+    margin-bottom: 2px;
+    margin-left: 10px ;
+    display: flex;
+    margin-left: 19px;
+    
+
+}
+#redbutton {
+    width: 7px;
+	height: 7px;
+    padding: 2% 2%;
+	border-radius: 50%;
+	background: rgb(26, 112, 26);
+    margin-right: 8px;
+}
+
+#greenbutton{
+    width: 7px;
+	height: 7px;
+    padding: 2% 2%;
+	border-radius: 50%;
+	background:  red;
+}
+#puntos{
+    display: flex;
+    margin-bottom: 6px;
+    margin-left: 2px;
+    
+}
+
+
+#whithepoint1{
+    width: 1.8px;
+    height: 1.6px;
+    margin-left: 20px;
+    margin-right: 17px;
+}
+
+#whithepoint2{
+    width: 2px;
+    height: 1.4px;
+    
+
+  
+}
+#puntos2{
+    display: flex;
+
+    
+}
+#fillpoint{
+    width: 5px;
+    height: 5px;
+    margin-left: 21px;
+    margin-right: 13px;
+
+}
+#emptypoint{
+    width: 6px;
+    height: 6px;
+}
+    
+    
+    
+    
+
+
+#screen{
+    background-color: whitesmoke;
+    width: 150px;
+    height: 30px;
+    border-color: grey;
+    border-width: 5px ;
+    margin-bottom:5px;
+    margin-left: 1px;
+    text-align: right;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#wraperbuttons{
+  margin-top: 20px;
+  margin-left: 18px;
+
+}
+
+.stringbutton{
+    border-radius: 80%;
+    padding: 3.2% 2.8%;
+    color: white;
+    background-color: rgb(43, 42, 42);
+    font-size: 7px;
+    margin-right: 4px;
+}
+
+
+
+.button{
+    border-radius: 80%;
+    color: white;
+    background-color: black;
+    margin-right: 5.1px;
+}
+
+
+
+#clear, #multiplicacion, #resta, #add, #comma {
+    border-radius: 80%;
+    color: white;
+    background-color: rgb(147, 92, 20);
+    text-align: center;
+
+
+}
+
+#point{
+    margin-left: 10px;
+
+
+}
+#result{
+    border-radius: 80%;
+    color: white;
+    background-color: rgb(235, 223, 55);
+    padding: 0.4% 2.6%;
+    margin-right: 6px ;
+    margin-left: 3.2px;
+}
+
+#porcentaje{
+    border-radius: 80%;
+    color: white;
+    background-color: rgb(147, 92, 20);
+    padding: 1.8% 2.6%;
+    font-size: 11px;
+    margin-right: 5.2px;
+
+}
+#division{
+    border-radius: 80%;
+    color: white;
+    background-color: rgb(147, 92, 20);
+    text-align: center;
+    font-size:  10px;
+    padding: 2% 4%;
+
+}
+
+
+#raiz{
+    border-radius: 80%;
+    color: white;
+    background-color: rgb(147, 92, 20);
+    text-align: center;
+    text-align: center;
+    font-size:  10px;
+    padding: 1.8% 3.2%;
+    margin-right: 6px;
+}
+#totalclear{
+    border-radius: 80%;
+    color: white;
+    background-color: rgb(147, 92, 20);
+    text-align: center;
+    text-align: center;
+    font-size:  10px;
+    padding: 1.8% 1.5%;
+    margin-right: 6px;
+
+}
+
+
+#line2{
+
+
+    margin-top: 7px;
+    margin-left: 2px;
+    margin-bottom: 6.5px;
+    
+}
+#line3{
+    
+    margin-left: 2px;
+    margin-bottom: 6.5px;
+}
+
+#line4{
+    margin-left: 2px;
+}
+
+#line5{
+    margin-top: 7px;
+    margin-left: 2px;
+    margin-bottom: 6.5px;
+}
